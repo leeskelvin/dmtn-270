@@ -1,0 +1,69 @@
+\documentclass[DM,authoryear,toc]{lsstdoc}
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+%If you want glossaries
+%\input{aglossary.tex}
+%\makeglossaries
+
+\title{Bright Star Subtraction in the LSST Science Pipelines}
+
+% Optional subtitle
+% \setDocSubtitle{A subtitle}
+
+\author{%
+Lee Kelvin
+}
+
+\setDocRef{DMTN-270}
+\setDocUpstreamLocation{\url{https://github.com/lsst-dm/dmtn-270}}
+
+\date{\vcsDate}
+
+% Optional: name of the document's curator
+% \setDocCurator{The Curator of this Document}
+
+\setDocAbstract{%
+This technote summarizes the bright star subtraction algorithm within the LSST Science Pipelines. One of the largest impediments to furthering a number of science goals, such as the ability to accurately characterize low surface brightness (LSB) flux, is the contamination caused by the extended wings of bright stars. These bright wings may be confused for other true astrophysical LSB light, or may erroneously enter into the background model leading to an incorrect background map. The tools described in this technote allow for the construction of an extended high fidelity bright star model with data processed by the LSST Science Pipelines. This extended bright star model may subsequently be subtracted from bright stars in the field of view, removing this wing contaminant flux prior to further downstream data processing.
+}
+
+% Change history defined here.
+% Order: oldest first.
+% Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
+% See LPM-51 for version number policy.
+\setDocChangeRecord{%
+  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{Lee Kelvin}
+}
+
+
+\begin{document}
+
+% Create the title page.
+\maketitle
+% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
+% use \mkshorttitle to remove the extra pages
+
+% ADD CONTENT HERE
+% You can also use the \input command to include several content files.
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\renewcommand{\refname}{} % Suppress default Bibliography section
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+% If you want glossary uncomment below -- comment out the two lines above
+%\printglossaries
+
+
+
+
+
+\end{document}
